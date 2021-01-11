@@ -1,12 +1,12 @@
-Bitcoin Core integration/staging tree
+Californium-252 [Core] integration/staging tree
 =====================================
 
-https://bitcoincore.org
+W.I.P - This is a fork of bitcoin currently being rewritten to support the vision of its creator in imitating the characteristics of its precious metal counterpart.
 
-What is Bitcoin?
+What is C252?
 ----------------
 
-Bitcoin is an experimental digital currency that enables instant payments to
+Californium-252 is an experimental digital currency that enables instant payments to
 anyone, anywhere in the world. Bitcoin uses peer-to-peer technology to operate
 with no central authority: managing transactions and issuing money are carried
 out collectively by the network. Bitcoin Core is the name of open source

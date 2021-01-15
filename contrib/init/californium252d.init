@@ -1,0 +1,67 @@
+#!/usr/bin/env bash
+#
+#  californiumd The californium core server.
+#
+#
+# chkconfig: 345 80 20
+# description: californiumd
+# processname: californiumd
+#
+
+# Source function library.
+. /etc/init.d/functions
+
+# you can override defaults in /etc/sysconfig/californiumd, see below
+if [ -f /etc/sysconfig/californiumd ]; then
+        . /etc/sysconfig/californiumd
+fi
+
+RETVAL=0
+
+prog=californiumd
+# you can override the lockfile via CALIFORNIUMD_LOCKFILE in /etc/sysconfig/californiumd
+lockfile=${CALIFORNIUMD_LOCKFILE-/var/lock/subsys/californiumd}
+
+# californiumd defaults to /usr/bin/californiumd, override with CALIFORNIUMD_BIN
+californiumd=${CALIFORNIUMD_BIN-/usr/bin/californiumd}
+
+# californiumd opts default to -disablewallet, override with CALIFORNIUMD_OPTS
+californiumd_opts=${CALIFORNIUMD_OPTS--disablewallet}
+
+start() {
+    echo -n $"Starting $prog: "
+    daemon $DAEMONOPTS $californiumd $californiumd_opts
+    RETVAL=$?
+    echo
+    [ $RETVAL -eq 0 ] && touch $lockfile
+    return $RETVAL
+}
+
+stop() {
+    echo -n $"Stopping $prog: "
+    killproc $prog -t600
+    RETVAL=$?
+    echo
+    [ $RETVAL -eq 0 ] && rm -f $lockfile
+    return $RETVAL
+}
+
+case "$1" in
+    start)
+        start
+        ;;
+    stop)
+        stop
+        ;;
+    status)
+        status $prog
+        ;;
+    restart)
+        stop
+        start
+        ;;
+    *)
+        echo "Usage: service $prog {start|stop|status|restart}"
+        exit 1
+        ;;
+esac

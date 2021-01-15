@@ -1,28 +1,28 @@
-// Copyright (c) 2018-2020 The Bitcoin Core developers
+// Copyright (c) 2018-2020 The Californium Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_QT_TEST_APPTESTS_H
-#define BITCOIN_QT_TEST_APPTESTS_H
+#ifndef CALIFORNIUM_QT_TEST_APPTESTS_H
+#define CALIFORNIUM_QT_TEST_APPTESTS_H
 
 #include <QObject>
 #include <set>
 #include <string>
 #include <utility>
 
-class BitcoinApplication;
-class BitcoinGUI;
+class CaliforniumApplication;
+class CaliforniumGUI;
 class RPCConsole;
 
 class AppTests : public QObject
 {
     Q_OBJECT
 public:
-    explicit AppTests(BitcoinApplication& app) : m_app(app) {}
+    explicit AppTests(CaliforniumApplication& app) : m_app(app) {}
 
 private Q_SLOTS:
     void appTests();
-    void guiTests(BitcoinGUI* window);
+    void guiTests(CaliforniumGUI* window);
     void consoleTests(RPCConsole* console);
 
 private:
@@ -37,8 +37,8 @@ private:
         ~HandleCallback();
     };
 
-    //! Bitcoin application.
-    BitcoinApplication& m_app;
+    //! Californium application.
+    CaliforniumApplication& m_app;
 
     //! Set of pending callback names. Used to track expected callbacks and shut
     //! down the app after the last callback has been handled and all tests have
@@ -47,4 +47,4 @@ private:
     std::multiset<std::string> m_callbacks;
 };
 
-#endif // BITCOIN_QT_TEST_APPTESTS_H
+#endif // CALIFORNIUM_QT_TEST_APPTESTS_H

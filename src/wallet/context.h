@@ -1,9 +1,9 @@
-// Copyright (c) 2020 The Bitcoin Core developers
+// Copyright (c) 2020 The Californium Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_WALLET_CONTEXT_H
-#define BITCOIN_WALLET_CONTEXT_H
+#ifndef CALIFORNIUM_WALLET_CONTEXT_H
+#define CALIFORNIUM_WALLET_CONTEXT_H
 
 class ArgsManager;
 namespace interfaces {
@@ -31,4 +31,4 @@ struct WalletContext {
     ~WalletContext();
 };
 
-#endif // BITCOIN_WALLET_CONTEXT_H
+#endif // CALIFORNIUM_WALLET_CONTEXT_H

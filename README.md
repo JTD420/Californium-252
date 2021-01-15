@@ -1,35 +1,35 @@
 Californium-252 [Core] integration/staging tree
 =====================================
 
-W.I.P - This is a fork of bitcoin currently being rewritten to support the vision of its creator in imitating the characteristics of its precious metal counterpart.
+W.I.P - This is a fork of californium currently being rewritten to support the vision of its creator in imitating the characteristics of its precious metal counterpart.
 
 What is C252?
 ----------------
 
 Californium-252 is an experimental digital currency that enables instant payments to
-anyone, anywhere in the world. Bitcoin uses peer-to-peer technology to operate
+anyone, anywhere in the world. Californium uses peer-to-peer technology to operate
 with no central authority: managing transactions and issuing money are carried
-out collectively by the network. Bitcoin Core is the name of open source
+out collectively by the network. Californium Core is the name of open source
 software which enables the use of this currency.
 
 For more information, as well as an immediately usable, binary version of
-the Bitcoin Core software, see https://bitcoincore.org/en/download/, or read the
-[original whitepaper](https://bitcoincore.org/bitcoin.pdf).
+the Californium Core software, see https://californiumcore.org/en/download/, or read the
+[original whitepaper](https://californiumcore.org/californium.pdf).
 
 License
 -------
 
-Bitcoin Core is released under the terms of the MIT license. See [COPYING](COPYING) for more
+Californium Core is released under the terms of the MIT license. See [COPYING](COPYING) for more
 information or see https://opensource.org/licenses/MIT.
 
 Development Process
 -------------------
 
 The `master` branch is regularly built (see `doc/build-*.md` for instructions) and tested, but it is not guaranteed to be
-completely stable. [Tags](https://github.com/bitcoin/bitcoin/tags) are created
-regularly from release branches to indicate new official, stable release versions of Bitcoin Core.
+completely stable. [Tags](https://github.com/californium/californium/tags) are created
+regularly from release branches to indicate new official, stable release versions of Californium Core.
 
-The https://github.com/bitcoin-core/gui repository is used exclusively for the
+The https://github.com/californium-core/gui repository is used exclusively for the
 development of the GUI. Its master branch is identical in all monotree
 repositories. Release branches and tags do not exist, so please do not fork
 that repository unless it is for development reasons.
@@ -70,7 +70,7 @@ Translations
 ------------
 
 Changes to translations as well as new translations can be submitted to
-[Bitcoin Core's Transifex page](https://www.transifex.com/bitcoin/bitcoin/).
+[Californium Core's Transifex page](https://www.transifex.com/californium/californium/).
 
 Translations are periodically pulled from Transifex and merged into the git repository. See the
 [translation process](doc/translation_process.md) for details on how this works.
@@ -78,4 +78,4 @@ Translations are periodically pulled from Transifex and merged into the git repo
 **Important**: We do not accept translation changes as GitHub pull requests because the next
 pull from Transifex would automatically overwrite them again.
 
-Translators should also subscribe to the [mailing list](https://groups.google.com/forum/#!forum/bitcoin-translators).
+Translators should also subscribe to the [mailing list](https://groups.google.com/forum/#!forum/californium-translators).

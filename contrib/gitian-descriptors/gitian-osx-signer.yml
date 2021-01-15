@@ -1,5 +1,5 @@
 ---
-name: "bitcoin-dmg-signer"
+name: "californium-dmg-signer"
 distro: "ubuntu"
 suites:
 - "bionic"
@@ -9,10 +9,10 @@ packages:
 - "faketime"
 - "xorriso"
 remotes:
-- "url": "https://github.com/bitcoin-core/bitcoin-detached-sigs.git"
+- "url": "https://github.com/californium-core/californium-detached-sigs.git"
   "dir": "signature"
 files:
-- "bitcoin-osx-unsigned.tar.gz"
+- "californium-osx-unsigned.tar.gz"
 script: |
   set -e -o pipefail
 
@@ -31,8 +31,8 @@ script: |
     chmod +x ${WRAP_DIR}/${prog}
   done
 
-  UNSIGNED=bitcoin-osx-unsigned.tar.gz
-  SIGNED=bitcoin-osx-signed.dmg
+  UNSIGNED=californium-osx-unsigned.tar.gz
+  SIGNED=californium-osx-signed.dmg
 
   tar -xf ${UNSIGNED}
   OSX_VOLNAME="$(cat osx_volname)"

@@ -1,9 +1,9 @@
-// Copyright (c) 2016-2020 The Bitcoin Core developers
+// Copyright (c) 2016-2020 The Californium Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_QT_MODALOVERLAY_H
-#define BITCOIN_QT_MODALOVERLAY_H
+#ifndef CALIFORNIUM_QT_MODALOVERLAY_H
+#define CALIFORNIUM_QT_MODALOVERLAY_H
 
 #include <QDateTime>
 #include <QPropertyAnimation>
@@ -54,4 +54,4 @@ private:
     void UpdateHeaderSyncLabel();
 };
 
-#endif // BITCOIN_QT_MODALOVERLAY_H
+#endif // CALIFORNIUM_QT_MODALOVERLAY_H

@@ -137,14 +137,14 @@ $(package)_config_opts_linux += -system-freetype
 $(package)_config_opts_linux += -fontconfig
 $(package)_config_opts_linux += -no-opengl
 $(package)_config_opts_linux += -dbus-runtime
-$(package)_config_opts_arm_linux += -platform linux-g++ -xplatform bitcoin-linux-g++
+$(package)_config_opts_arm_linux += -platform linux-g++ -xplatform californium-linux-g++
 $(package)_config_opts_i686_linux  = -xplatform linux-g++-32
 $(package)_config_opts_x86_64_linux = -xplatform linux-g++-64
 $(package)_config_opts_aarch64_linux = -xplatform linux-aarch64-gnu-g++
-$(package)_config_opts_powerpc64_linux = -platform linux-g++ -xplatform bitcoin-linux-g++
-$(package)_config_opts_powerpc64le_linux = -platform linux-g++ -xplatform bitcoin-linux-g++
-$(package)_config_opts_riscv64_linux = -platform linux-g++ -xplatform bitcoin-linux-g++
-$(package)_config_opts_s390x_linux = -platform linux-g++ -xplatform bitcoin-linux-g++
+$(package)_config_opts_powerpc64_linux = -platform linux-g++ -xplatform californium-linux-g++
+$(package)_config_opts_powerpc64le_linux = -platform linux-g++ -xplatform californium-linux-g++
+$(package)_config_opts_riscv64_linux = -platform linux-g++ -xplatform californium-linux-g++
+$(package)_config_opts_s390x_linux = -platform linux-g++ -xplatform californium-linux-g++
 
 $(package)_config_opts_mingw32 = -no-opengl
 $(package)_config_opts_mingw32 += -no-dbus
@@ -207,7 +207,7 @@ endef
 # 3. Create a macOS-Clang-Linux mkspec using our mac-qmake.conf.
 #
 # 4. After making a copy of the mkspec for the linux-arm-gnueabi host, named
-# bitcoin-linux-g++, replace instances of linux-arm-gnueabi with $(host). This
+# californium-linux-g++, replace instances of linux-arm-gnueabi with $(host). This
 # way we can generically support hosts like riscv64-linux-gnu, which Qt doesn't
 # ship a mkspec for. See it's usage in config_opts_* above.
 #
@@ -239,8 +239,8 @@ define $(package)_preprocess_cmds
   mkdir -p qtbase/mkspecs/macx-clang-linux &&\
   cp -f qtbase/mkspecs/macx-clang/qplatformdefs.h qtbase/mkspecs/macx-clang-linux/ &&\
   cp -f $($(package)_patch_dir)/mac-qmake.conf qtbase/mkspecs/macx-clang-linux/qmake.conf && \
-  cp -r qtbase/mkspecs/linux-arm-gnueabi-g++ qtbase/mkspecs/bitcoin-linux-g++ && \
-  sed -i.old "s/arm-linux-gnueabi-/$(host)-/g" qtbase/mkspecs/bitcoin-linux-g++/qmake.conf && \
+  cp -r qtbase/mkspecs/linux-arm-gnueabi-g++ qtbase/mkspecs/californium-linux-g++ && \
+  sed -i.old "s/arm-linux-gnueabi-/$(host)-/g" qtbase/mkspecs/californium-linux-g++/qmake.conf && \
   echo "!host_build: QMAKE_CFLAGS     += $($(package)_cflags) $($(package)_cppflags)" >> qtbase/mkspecs/common/gcc-base.conf && \
   echo "!host_build: QMAKE_CXXFLAGS   += $($(package)_cxxflags) $($(package)_cppflags)" >> qtbase/mkspecs/common/gcc-base.conf && \
   echo "!host_build: QMAKE_LFLAGS     += $($(package)_ldflags)" >> qtbase/mkspecs/common/gcc-base.conf && \

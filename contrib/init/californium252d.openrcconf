@@ -1,0 +1,33 @@
+# /etc/conf.d/californiumd: config file for /etc/init.d/californiumd
+
+# Config file location
+#CALIFORNIUMD_CONFIGFILE="/etc/californium/californium.conf"
+
+# What directory to write pidfile to?  (created and owned by $CALIFORNIUMD_USER)
+#CALIFORNIUMD_PIDDIR="/var/run/californiumd"
+
+# What filename to give the pidfile
+#CALIFORNIUMD_PIDFILE="${CALIFORNIUMD_PIDDIR}/californiumd.pid"
+
+# Where to write californiumd data (be mindful that the blockchain is large)
+#CALIFORNIUMD_DATADIR="/var/lib/californiumd"
+
+# User and group to own californiumd process
+#CALIFORNIUMD_USER="californium"
+#CALIFORNIUMD_GROUP="californium"
+
+# Path to californiumd executable
+#CALIFORNIUMD_BIN="/usr/bin/californiumd"
+
+# Nice value to run californiumd under
+#CALIFORNIUMD_NICE=0
+
+# Additional options (avoid -conf and -datadir, use flags above)
+#CALIFORNIUMD_OPTS=""
+
+# The timeout in seconds OpenRC will wait for californiumd to terminate
+# after a SIGTERM has been raised.
+# Note that this will be mapped as argument to start-stop-daemon's
+# '--retry' option, which means you can specify a retry schedule
+# here. For more information see man 8 start-stop-daemon.
+CALIFORNIUMD_SIGTERM_TIMEOUT=600

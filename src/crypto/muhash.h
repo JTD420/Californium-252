@@ -1,12 +1,12 @@
-// Copyright (c) 2017-2020 The Bitcoin Core developers
+// Copyright (c) 2017-2020 The Californium Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_CRYPTO_MUHASH_H
-#define BITCOIN_CRYPTO_MUHASH_H
+#ifndef CALIFORNIUM_CRYPTO_MUHASH_H
+#define CALIFORNIUM_CRYPTO_MUHASH_H
 
 #if defined(HAVE_CONFIG_H)
-#include <config/bitcoin-config.h>
+#include <config/californium-config.h>
 #endif
 
 #include <serialize.h>
@@ -86,7 +86,7 @@ public:
  * is intended to represent a set of elements.
  *
  * See also https://cseweb.ucsd.edu/~mihir/papers/inchash.pdf and
- * https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-May/014337.html.
+ * https://lists.linuxfoundation.org/pipermail/californium-dev/2017-May/014337.html.
  */
 class MuHash3072
 {
@@ -127,4 +127,4 @@ public:
     }
 };
 
-#endif // BITCOIN_CRYPTO_MUHASH_H
+#endif // CALIFORNIUM_CRYPTO_MUHASH_H
